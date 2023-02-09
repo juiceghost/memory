@@ -1,7 +1,7 @@
 // Memory
 const myBoard = document.querySelector('.board') // ett element, ALLTID
 
-const gameBoard = ['🍇', '🍈', '🍋', '🍌', '🍊', '🍉', '🍇', '🍈', '🍋', '🍌', '🍊', '🍉']
+const gameBoard = ['🍇', '🍈', '🍋', '🍌', '🍊', '🍉', '🍇', '🍈', '🍋', '🍌', '🍊', '🍉', '🍌', '🍊', '🍉']
 function createBoard() {
     console.log("Hej från createBoard")
     // Skapa arrayen som innehåller korten
@@ -38,8 +38,8 @@ const allCards = document.querySelectorAll('.board > img') // en NodeList av ele
 
 function clickCard(evt) {
     // Gör så att denna funktion körs vid ett click på ett kort
-    console.log("Hej från clickCard")
-    console.log(evt)
+    //console.log("Hej från clickCard")
+    //console.log(evt)
 
     // om användaren inte klickat på ett av korten, gör ingenting
     if (evt.target.tagName != 'IMG') {
@@ -47,7 +47,7 @@ function clickCard(evt) {
         return
     }
 
-    console.log("Grattis, du lyckades klicka på en bild")
+    //console.log("Grattis, du lyckades klicka på en bild")
     // Vad har jag egentligen klickat på?
 
 
@@ -59,7 +59,23 @@ function clickCard(evt) {
 
     const allCardsArray = [...allCards];
     const clickedIndex = allCardsArray.indexOf(evt.target);
-    console.log(clickedIndex)
+    console.log(gameBoard[clickedIndex])
+    evt.target.classList.toggle('turned')
+    const cardFace = document.createElement('span');
+    cardFace.innerText = gameBoard[clickedIndex]
+    evt.target.insertAdjacentElement('beforebegin', cardFace)
+    // states
+    // övergångar mellan states
 
+    // state 0: inga kort vända
+    // state 1: ett kort vänt
+    // state 2: två kort vända
+
+    // är bägge korten lika?
+    // om ja: öka poäng med 1, korten tas bort / avaktiveras
+    // om nej: korten vänds tillbaka
+
+
+    // gameBoard?
 
 }

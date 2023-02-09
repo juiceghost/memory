@@ -11,6 +11,11 @@ body {
   flex-wrap: wrap;
 }
 
+
+.turned {
+  opacity: 0;
+}
+
 h1 {
   position: relative;
   font: bolder 22px/30px "Arial Black", Gadget, sans-serif;
